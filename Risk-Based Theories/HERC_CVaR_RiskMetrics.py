@@ -164,7 +164,7 @@ for ticker in tickers:
     # Calculate the values for the first row
     returns_data.loc[returns_data.index[1], rm_col_name] = 0.0
     for i in range(2, len(returns_data)):
-        returns_data.loc[returns_data.index[i], rm_col_name] = (returns_data.loc[returns_data.index[i-1], rt_col_name]**2) * 0.06 + returns_data.loc[returns_data.index[i-1], rm_col_name] * 0.94
+        returns_data.loc[returns_data.index[i], rm_col_name] = (returns_data.loc[returns_data.index[i-1], rt_col_name]**2) * 0.06 + returns_data.loc[returns_data.index[i-1], rm_col_name] * 0.94  #RiskMetrics formula
     var_col_name = f'VaR_{ticker}'
     returns_data[var_col_name] = -np.sqrt(returns_data[rm_col_name]) * norm.ppf(1 - conf_level)
     last_var = returns_data.iloc[-1][var_col_name]
