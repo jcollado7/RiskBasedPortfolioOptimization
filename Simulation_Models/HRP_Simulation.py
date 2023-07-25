@@ -42,14 +42,14 @@ for i in tickers_1:
     
 # Get today's date
 today = datetime.today().date()
-fecha_inicio = '2022-01-03'
+start_date = '2022-01-03'
 
-indice_inicio =  returns_data_sp.index.get_loc(fecha_inicio)
+start_index =  returns_data_sp.index.get_loc(start_date)
 index_values = []
 port_values = []
 dates_values = []
 
-for i in range(indice_inicio, len(returns_data_sp)-2):
+for i in range(start_index, len(returns_data_sp)-2):
     specific_index = i + 1
     # Use YahooFinancials to retrieve historic price data for the tickers
     price_data = pd.DataFrame()
