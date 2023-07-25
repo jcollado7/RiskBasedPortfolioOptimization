@@ -1,1 +1,5 @@
-# RiskBasedPortfolioOptimization
+The DOW JONES INDEX will be compared with the portfolios obtained using both the HRP and HERC theories, along with their respective risk measures. 
+The input companies for the models are the same 30 companies as those in the index, making the comparison suitable as both the index and the portfolio consist of the same set of companies. 
+This index has been chosen because its composition has remained unchanged since 2020-08-31, ensuring that the same set of companies constitutes the index from that point onwards, thereby facilitating the comparison.
+Firstly, we gather the data from 2020-11-01, until 2022-01-03, inclusive. With this data we calculate the weights for the new portfolio. These weights, when multiplied by the returns on 2022-01-04, yield the calculated portfolio return on 2022-01-04. Subsequently, this return will be compared with the return of the index on 2022-01-04. 
+In the following calculation, we will include the historical data for 2022-01-04, and compute the return of the new portfolio for 2022-01-05, and so on for subsequent days until 2023-07-01. Hence, we will be able to compare 375 different days.
