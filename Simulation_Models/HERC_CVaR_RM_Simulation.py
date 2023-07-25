@@ -208,5 +208,5 @@ ax.set_ylabel('Portfolio Value')
 ax.set_title('Portfolio Value Over Time')
 ax.legend(loc='upper left')
 
-df = pd.DataFrame({'Columna1': index_graph, 'Columna2': port_graph, 'Columna3': dates_values})
+df = pd.DataFrame({'Column1': index_graph, 'Column2': port_graph, 'Column3': dates_values})
 #df.to_excel('C:\\--\--\--\HERC_CVaR_RM_Sim.xlsx', index=False)
