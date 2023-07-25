@@ -131,6 +131,8 @@ for num_clusters in num_clusters_range:
 
 print("Optimal number of clusters:", optimal_num_clusters)
 
+#random_sample = pd.DataFrame(rd_sm, columns=tickers, index=tickers)
+#linkage_random = sch.linkage(random_sample, method='ward')
 #Kmax = 10
 #W = []
 #gap_stats = np.zeros((Kmax,))
@@ -149,9 +151,6 @@ print("Optimal number of clusters:", optimal_num_clusters)
 #print("Optimal number of clusters:", optimal_k)
 
 #-----------------------------------------------------------------------------------
-
-random_sample = pd.DataFrame(rd_sm, columns=tickers, index=tickers)
-linkage_random = sch.linkage(random_sample, method='ward')
 
 cov_matrix = cov_matrix.rename(index=lambda x: x.replace('rt_', ''))
 cov_matrix = cov_matrix.rename(columns=lambda x: x.replace('rt_', ''))
