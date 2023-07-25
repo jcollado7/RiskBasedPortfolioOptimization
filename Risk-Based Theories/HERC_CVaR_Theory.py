@@ -211,14 +211,11 @@ for i in range(optimal_num_clusters-1):
             for stock in sublist:
                 weights_dict[stock] *= weight_cluster 
 clusters_final = clusters_list_1
-for cluster in clusters_final:
-    cluster_cVaRs = stock_cVaR.loc[['rt_' + asset for asset in cluster]]  # Get the CVaRs of the stocks in the current cluster.
-    inverse_cVaRs = 1 / cluster_cVaRs
-    total_sum_of_inverse = inverse_cVaRs.sum()
-    weights_in_cluster = inverse_cVaRs / total_sum_of_inverse
-    weights_in_cluster.index = weights_in_cluster.index.str.replace('rt_', '')
-    for stock, weight in weights_in_cluster.items():
-        weights_dict[stock] *= weight
+for sublist in clusters_final:
+    cov_cluster = cov_matrix.loc[sublist, sublist]
+    for stock in sublist:
+        weight_stock = (1 / (cov_cluster.loc[stock, stock]) / sum(1 / (cov_cluster.loc[stock, stock]) for stock in sublist))
+        weights_dict[stock] *= weight_stock
         
 weights = pd.Series(weights_dict)
 print("Final weights \n", weights)
