@@ -16,8 +16,7 @@ from sklearn.cluster import AgglomerativeClustering
 from sklearn.metrics import silhouette_score
 from sklearn.metrics import pairwise_distances
 
-# Define the tickers for Apple and Walmart
-#"SPMYY", "GWRS"
+# Define the tickers
 tickers = ["MMM", "GS", "NKE", "AXP", "HD", "PG", "AMGN", "HON", "CRM", "AAPL", "INTC", "TRV", "BA", "IBM",
           "UNH", "CAT", "JNJ", "VZ", "CVX", "JPM", "V", "CSCO", "MCD", "WBA", "KO", "MRK", "WMT", "DOW", 
            "MSFT", "DIS"]
